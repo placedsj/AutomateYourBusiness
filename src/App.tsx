@@ -61,7 +61,7 @@ export default function App() {
   const [isLiveAutoActive, setIsLiveAutoActive] = useState(false);
 
   // Initial Load from APIs
-  const loadInitialData = async () => {
+  const loadInitialData = async (isFirstLoad = false) => {
     setIsLoading(true);
     try {
       const [invRes, chkRes, cfgRes, logRes, emlRes] = await Promise.all([
@@ -79,10 +79,20 @@ export default function App() {
       setEmails(emlRes);
 
       // Default the active workspace invoice
-      if (invRes && invRes.length > 0) {
-        setActiveInvoice(invRes[0]);
-      } else {
+      if (isFirstLoad) {
         createNewInvoice(cfgRes.lastInvoiceNumber);
+      } else {
+        setActiveInvoice((currentActive) => {
+          if (currentActive.id) {
+            const updated = invRes.find((x: any) => x.id === currentActive.id);
+            return updated || currentActive;
+          }
+          const matches = invRes.find((x: any) => x.invoiceNumber === currentActive.invoiceNumber);
+          if (matches) {
+            return matches;
+          }
+          return currentActive;
+        });
       }
     } catch (err) {
       console.error("Failed to sync applet with server-side database:", err);
@@ -92,7 +102,7 @@ export default function App() {
   };
 
   useEffect(() => {
-    loadInitialData();
+    loadInitialData(true);
   }, []);
 
   const createNewInvoice = (lastNum: number) => {

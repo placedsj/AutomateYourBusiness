@@ -49,7 +49,11 @@ export const InvoicePreview = forwardRef<InvoicePreviewHandle, InvoicePreviewPro
         <div className="flex items-center justify-center border-r border-[#000000]/60 p-4">
           <div className="flex flex-col items-center">
             <img src={Logo} alt="Paul's Roofing" className="w-auto h-20 drop-shadow-md" />
-            <span className="font-display text-lg font-black tracking-wider uppercase text-white mt-1">Paul's Roofing</span>
+            <span className="font-display text-xs font-black tracking-wider uppercase text-white mt-1 text-center max-w-[200px]">
+              35 years strong
+              <br />
+              will yours be next?
+            </span>
           </div>
         </div>
 
@@ -76,7 +80,11 @@ export const InvoicePreview = forwardRef<InvoicePreviewHandle, InvoicePreviewPro
       {/* Company meta and Client stats */}
       <div className="grid grid-cols-2 gap-11 py-7 border-b border-slate-100">
         <div>
-          <h2 className="text-lg font-extrabold text-[#07002f] mb-1 font-display">Paul's Roofing</h2>
+          <h2 className="text-xs font-black tracking-wider uppercase text-[#07002f] mb-1 font-display">
+            35 years strong
+            <br />
+            will yours be next?
+          </h2>
           <p className="text-sm text-slate-500 mb-0.5">Quispamsis, NB</p>
           <p className="text-sm text-slate-500 flex items-center gap-1.5 mt-1.5 h-5">
             <Phone className="w-3.5 h-3.5 text-[#00a0df]" />
@@ -84,7 +92,7 @@ export const InvoicePreview = forwardRef<InvoicePreviewHandle, InvoicePreviewPro
           </p>
           <p className="text-sm text-slate-500 flex items-center gap-1.5 h-5">
             <Mail className="w-3.5 h-3.5 text-[#00a0df]" />
-            paul@paulroofs.com
+            paulcarey802@gmail.com
           </p>
         </div>
 

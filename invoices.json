@@ -1,0 +1,1113 @@
+{
+  "config": {
+    "gmailEmail": "placed.sj@gmail.com",
+    "senderFilter": "paulcarey802@gmail.com",
+    "notionToken": "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",
+    "notionDatabaseId": "notion_database_9315",
+    "lastInvoiceNumber": 1513,
+    "geminiApiKey": "AQ.Ab8RN6JS6bljvxEqErZFeOKyhFf-BCx7UhTc-lZ7ED-RU-SJbA",
+    "clientProfiles": {
+      "roy": {
+        "name": "Roy Swazey's Roofing",
+        "address": "140 Renshaw Road, Rothesay, NB E2H 1R6",
+        "phone": "(506) 273-1609"
+      },
+      "luna": {
+        "name": "Luna",
+        "address": null,
+        "phone": ""
+      }
+    }
+  },
+  "invoices": [
+    {
+      "id": "inv-1781987048527-1494",
+      "invoiceNumber": "1494",
+      "date": "June 19, 2026",
+      "dueDate": "June 19, 2026",
+      "terms": "Upon Completion",
+      "client": {
+        "name": "Roy Swazey",
+        "address": "Rothesay, NB",
+        "jobAddress": "12 Fieldcrest",
+        "phone": ""
+      },
+      "sections": [
+        {
+          "title": "Materials & Installation",
+          "items": [
+            {
+              "description": "Metal roofing installation",
+              "qty": 1,
+              "unit": "job",
+              "price": null,
+              "total": null
+            }
+          ]
+        }
+      ],
+      "extras": [
+        "Cut 80' ridge vent",
+        "Selkirk chimney",
+        "Install & remove an additional 6 square"
+      ],
+      "warranty": "10 YEAR Ltd. WARRANTY on Workmanship",
+      "taxRate": 0.15,
+      "subtotal": 0,
+      "tax": 0,
+      "total": 0,
+      "balanceDue": 0,
+      "status": "Draft"
+    },
+    {
+      "id": "inv-1781987048527-1503",
+      "invoiceNumber": "1503",
+      "date": "June 19, 2026",
+      "dueDate": "June 18, 2026",
+      "terms": "Upon Completion",
+      "client": {
+        "name": "Roy Swazey's Roofing",
+        "address": "140 Renshaw Road, Rothesay, NB E2H 1R6",
+        "jobAddress": "100 main street",
+        "phone": "(506) 273-1609"
+      },
+      "sections": [
+        {
+          "title": "Materials & Installation",
+          "items": [
+            {
+              "description": "Metal Install",
+              "qty": 1,
+              "unit": "job",
+              "price": 5000
+            }
+          ]
+        }
+      ],
+      "extras": [],
+      "warranty": "10 YEAR Ltd. WARRANTY on Workmanship",
+      "taxRate": 0.15,
+      "subtotal": 5000,
+      "tax": 750,
+      "total": 5750,
+      "balanceDue": 0,
+      "status": "Draft"
+    },
+    {
+      "id": "inv-1781987048527-1495",
+      "status": "Draft",
+      "invoiceNumber": "1495",
+      "date": "June 19, 2026",
+      "terms": "",
+      "client": {
+        "name": "Roy Swazey's Roofing",
+        "address": "140 Renshaw Road, Rothesay, NB E2H 1R6",
+        "jobAddress": "12 Fieldcrest",
+        "phone": "(506) 273-1609"
+      },
+      "sections": [
+        {
+          "title": "Materials & Installation",
+          "items": [
+            {
+              "description": "Metal Install - 6/12 pitch",
+              "qty": 20,
+              "unit": "sq",
+              "price": 210
+            },
+            {
+              "description": "Metal Install - 8/12 pitch",
+              "qty": 10,
+              "unit": "sq",
+              "price": 230
+            },
+            {
+              "description": "Valley",
+              "qty": 140,
+              "unit": "feet",
+              "price": 5
+            },
+            {
+              "description": "Synthetic underlayment",
+              "qty": 30,
+              "unit": "sq",
+              "price": 10
+            },
+            {
+              "description": "Returns",
+              "qty": 8,
+              "unit": "each",
+              "price": 75
+            }
+          ]
+        }
+      ],
+      "extras": [
+        "Cut 80' Vent Ridge",
+        "Selkirk Chimney",
+        "Install + Remove + Install 6 sq."
+      ],
+      "warranty": "10 YEAR Ltd. WARRANTY on Workmanship"
+    },
+    {
+      "id": "inv-1781987048527-1496",
+      "status": "Draft",
+      "invoiceNumber": "1496",
+      "date": "June 19/2026",
+      "terms": "",
+      "client": {
+        "name": "Roy Swazey's Roofing",
+        "address": "140 Renshaw Road, Rothesay, NB E2H 1R6",
+        "jobAddress": "12 Fieldcrest",
+        "phone": "(506) 273-1609"
+      },
+      "sections": [
+        {
+          "title": "Labour",
+          "items": [
+            {
+              "description": "20 sq. 6/12 pitch",
+              "qty": 20,
+              "unit": "sq",
+              "price": 210
+            },
+            {
+              "description": "10 sq. 8/12 pitch",
+              "qty": 10,
+              "unit": "sq",
+              "price": 230
+            },
+            {
+              "description": "140 feet Valley",
+              "qty": 140,
+              "unit": "feet",
+              "price": 5
+            },
+            {
+              "description": "Synthetic underlayment",
+              "qty": 30,
+              "unit": "sq",
+              "price": 10
+            },
+            {
+              "description": "8 Returns",
+              "qty": 8,
+              "unit": "each",
+              "price": 75
+            }
+          ]
+        }
+      ],
+      "extras": [
+        "Cut 80' Vent Ridge",
+        "CelKirk Chimney",
+        "Install + Remove + Install 6 sq."
+      ],
+      "warranty": "10 YEAR Ltd. WARRANTY on Workmanship"
+    },
+    {
+      "id": "inv-1781987048527-1497",
+      "status": "Draft",
+      "invoiceNumber": "1497",
+      "date": "June 19, 2026",
+      "terms": "",
+      "client": {
+        "name": "Roy Swazey's Roofing",
+        "address": "140 Renshaw Road, Rothesay, NB E2H 1R6",
+        "jobAddress": "12 Fieldcrest",
+        "phone": "(506) 273-1609"
+      },
+      "sections": [
+        {
+          "title": "Labour & Materials",
+          "items": [
+            {
+              "description": "Metal Install - 6/12 pitch",
+              "qty": 20,
+              "unit": "sq",
+              "price": 210
+            },
+            {
+              "description": "Metal Install - 8/12 pitch",
+              "qty": 10,
+              "unit": "sq",
+              "price": 230
+            },
+            {
+              "description": "Valley",
+              "qty": 140,
+              "unit": "feet",
+              "price": 5
+            },
+            {
+              "description": "Synthetic underlayment",
+              "qty": 30,
+              "unit": "sq",
+              "price": 10
+            },
+            {
+              "description": "Returns",
+              "qty": 8,
+              "unit": "each",
+              "price": 75
+            }
+          ]
+        }
+      ],
+      "extras": [
+        "Cut 80' Vent Ridge",
+        "CelKirk Chimney",
+        "Install + Remove + Install 6 sq."
+      ],
+      "warranty": "10 YEAR Ltd. WARRANTY on Workmanship"
+    },
+    {
+      "id": "inv-1781987048527-1498",
+      "status": "Draft",
+      "invoiceNumber": "1498",
+      "date": "June 19, 2026",
+      "terms": null,
+      "client": {
+        "name": "Roy Swazey's Roofing",
+        "address": "140 Renshaw Road, Rothesay, NB E2H 1R6",
+        "jobAddress": "12 Fieldcrest",
+        "phone": "(506) 273-1609"
+      },
+      "sections": [
+        {
+          "title": "Labour & Materials",
+          "items": [
+            {
+              "description": "20 sq. 6/12 pitch",
+              "qty": 20,
+              "unit": "sq",
+              "price": 210
+            },
+            {
+              "description": "10 sq. 8/12 pitch",
+              "qty": 10,
+              "unit": "sq",
+              "price": 230
+            },
+            {
+              "description": "Valley",
+              "qty": 140,
+              "unit": "feet",
+              "price": 5
+            },
+            {
+              "description": "Synthetic underlayment",
+              "qty": 30,
+              "unit": "sq",
+              "price": 10
+            },
+            {
+              "description": "Returns",
+              "qty": 8,
+              "unit": "each",
+              "price": 75
+            }
+          ]
+        }
+      ],
+      "extras": [
+        "Cut 80' Vent Ridge",
+        "Celkirk Chimney",
+        "Install + Remove + Install 6 sq."
+      ],
+      "warranty": "10 YEAR Ltd. WARRANTY on Workmanship"
+    },
+    {
+      "id": "inv-1781987048527-1499",
+      "status": "Draft",
+      "invoiceNumber": "1499",
+      "date": "June 19, 2026",
+      "terms": "",
+      "client": {
+        "name": "Roy Swazey's Roofing",
+        "address": "140 Renshaw Road, Rothesay, NB E2H 1R6",
+        "jobAddress": "12 Fieldcrest",
+        "phone": "(506) 273-1609"
+      },
+      "sections": [
+        {
+          "title": "Materials & Installation",
+          "items": [
+            {
+              "description": "Metal Install - 6/12 pitch",
+              "qty": 20,
+              "unit": "sq",
+              "price": 210
+            },
+            {
+              "description": "Metal Install - 8/12 pitch",
+              "qty": 10,
+              "unit": "sq",
+              "price": 230
+            },
+            {
+              "description": "Valley",
+              "qty": 140,
+              "unit": "feet",
+              "price": 5
+            },
+            {
+              "description": "Synthetic underlayment",
+              "qty": 30,
+              "unit": "sq",
+              "price": 10
+            },
+            {
+              "description": "Returns",
+              "qty": 8,
+              "unit": "each",
+              "price": 75
+            }
+          ]
+        }
+      ],
+      "extras": [
+        "Cut 80' Vent Ridge",
+        "CelKirk Chimney",
+        "Install + Remove + Install 6 sq."
+      ],
+      "warranty": "10 YEAR Ltd. WARRANTY on Workmanship"
+    },
+    {
+      "id": "inv-1781987048527-1500",
+      "status": "Draft",
+      "invoiceNumber": "1500",
+      "date": "June 19/2026",
+      "terms": "",
+      "client": {
+        "name": "Roy Swazey's Roofing",
+        "address": "140 Renshaw Road, Rothesay, NB E2H 1R6",
+        "jobAddress": "12 Fieldcrest",
+        "phone": "(506) 273-1609"
+      },
+      "sections": [
+        {
+          "title": "Materials & Installation",
+          "items": [
+            {
+              "description": "Metal install - 6/12 pitch",
+              "qty": 20,
+              "unit": "sq",
+              "price": 210
+            },
+            {
+              "description": "Metal install - 8/12 pitch",
+              "qty": 10,
+              "unit": "sq",
+              "price": 230
+            },
+            {
+              "description": "Valley",
+              "qty": 140,
+              "unit": "foot",
+              "price": 5
+            },
+            {
+              "description": "Synthetic underlayment",
+              "qty": 30,
+              "unit": "sq",
+              "price": 10
+            },
+            {
+              "description": "Returns",
+              "qty": 8,
+              "unit": "per",
+              "price": 75
+            }
+          ]
+        }
+      ],
+      "extras": [
+        "Cut 80' Vent Ridge",
+        "CelKirk Chimney",
+        "Install + Remove + Install 6 sq."
+      ],
+      "warranty": "10 YEAR Ltd. WARRANTY on Workmanship"
+    },
+    {
+      "id": "inv-1781987048527-1501",
+      "status": "Draft",
+      "invoiceNumber": "1501",
+      "date": "June 19/2026",
+      "terms": "",
+      "client": {
+        "name": "Roy Swazey's Roofing",
+        "address": "140 Renshaw Road, Rothesay, NB E2H 1R6",
+        "jobAddress": "12 Fieldcrest",
+        "phone": "(506) 273-1609"
+      },
+      "sections": [
+        {
+          "title": "30 sq. metal Install",
+          "items": [
+            {
+              "description": "6/12 pitch",
+              "qty": 20,
+              "unit": "sq",
+              "price": 210
+            },
+            {
+              "description": "8/12 pitch",
+              "qty": 10,
+              "unit": "sq",
+              "price": 230
+            },
+            {
+              "description": "Valley",
+              "qty": 140,
+              "unit": "feet",
+              "price": 5
+            },
+            {
+              "description": "Synthetic underlayment",
+              "qty": 30,
+              "unit": "sq",
+              "price": 10
+            },
+            {
+              "description": "Returns",
+              "qty": 8,
+              "unit": "each",
+              "price": 75
+            }
+          ]
+        }
+      ],
+      "extras": [
+        "Cut 80' Vent Ridge",
+        "CelKirk Chimney",
+        "Install + Remove + Install 6 sq."
+      ],
+      "warranty": "10 YEAR Ltd. WARRANTY on Workmanship"
+    },
+    {
+      "id": "inv-1781987048527-1502",
+      "status": "Draft",
+      "invoiceNumber": "1502",
+      "date": "June 19/2026",
+      "terms": "",
+      "client": {
+        "name": "Roy Swazey's Roofing",
+        "address": "140 Renshaw Road, Rothesay, NB E2H 1R6",
+        "jobAddress": "12 Fieldcrest",
+        "phone": "(506) 273-1609"
+      },
+      "sections": [
+        {
+          "title": "Materials & Labor",
+          "items": [
+            {
+              "description": "Metal Install - 6/12 pitch",
+              "qty": 20,
+              "unit": "sq",
+              "price": 210
+            },
+            {
+              "description": "Metal Install - 8/12 pitch",
+              "qty": 10,
+              "unit": "sq",
+              "price": 230
+            },
+            {
+              "description": "Valley",
+              "qty": 140,
+              "unit": "feet",
+              "price": 5
+            },
+            {
+              "description": "Synthetic underlayment",
+              "qty": 30,
+              "unit": "sq",
+              "price": 10
+            },
+            {
+              "description": "Returns",
+              "qty": 8,
+              "unit": "each",
+              "price": 75
+            }
+          ]
+        }
+      ],
+      "extras": [
+        "Cut 80' Vent Ridge",
+        "CelKirk Chimney",
+        "Install + Remove + Install 6 sq."
+      ],
+      "warranty": "10 YEAR Ltd. WARRANTY on Workmanship"
+    },
+    {
+      "id": "inv-1781987048527-1504",
+      "status": "Draft",
+      "invoiceNumber": "1504",
+      "date": "June 19, 2026",
+      "terms": "Upon Completion",
+      "client": {
+        "name": "Roy Swazey's Roofing",
+        "address": "140 Renshaw Road, Rothesay, NB E2H 1R6",
+        "jobAddress": "100 main street",
+        "phone": "(506) 273-1609"
+      },
+      "sections": [
+        {
+          "title": "Materials & Installation",
+          "items": [
+            {
+              "description": "Metal Install",
+              "qty": 1,
+              "unit": "job",
+              "price": 5000
+            }
+          ]
+        }
+      ],
+      "extras": [],
+      "warranty": "10 YEAR Ltd. WARRANTY on Workmanship"
+    },
+    {
+      "id": "inv-1781987048527-1505",
+      "status": "Draft",
+      "invoiceNumber": "1505",
+      "date": "June 19/2026",
+      "terms": null,
+      "client": {
+        "name": "Roy Swazey's Roofing",
+        "address": "140 Renshaw Road, Rothesay, NB E2H 1R6",
+        "jobAddress": "12 Fieldcrest",
+        "phone": "(506) 273-1609"
+      },
+      "sections": [
+        {
+          "title": "Material & Labour",
+          "items": [
+            {
+              "description": "6/12 pitch metal install",
+              "qty": 20,
+              "unit": "sq",
+              "price": 210
+            },
+            {
+              "description": "8/12 pitch metal install",
+              "qty": 10,
+              "unit": "sq",
+              "price": 230
+            },
+            {
+              "description": "Valley",
+              "qty": 140,
+              "unit": "feet",
+              "price": 5
+            },
+            {
+              "description": "Synthetic underlayment",
+              "qty": 30,
+              "unit": "sq",
+              "price": 10
+            },
+            {
+              "description": "Returns",
+              "qty": 8,
+              "unit": "each",
+              "price": 75
+            }
+          ]
+        }
+      ],
+      "extras": [
+        "Cut 80' Vent Ridge",
+        "CelKirk Chimney",
+        "Install + Remove + Install 6 sq."
+      ],
+      "warranty": "10 YEAR Ltd. WARRANTY on Workmanship"
+    },
+    {
+      "id": "inv-1781987048527-1506",
+      "status": "Draft",
+      "invoiceNumber": "1506",
+      "date": "June 19, 2026",
+      "terms": "Upon Completion",
+      "client": {
+        "name": "Roy Swazey's Roofing",
+        "address": "140 Renshaw Road, Rothesay, NB E2H 1R6",
+        "jobAddress": "200 main street",
+        "phone": "(506) 273-1609"
+      },
+      "sections": [
+        {
+          "title": "Materials & Installation",
+          "items": [
+            {
+              "description": "Metal Install",
+              "qty": 1,
+              "unit": "job",
+              "price": 3000
+            }
+          ]
+        }
+      ],
+      "extras": [],
+      "warranty": "10 YEAR Ltd. WARRANTY on Workmanship"
+    },
+    {
+      "id": "inv-1781987048527-1507",
+      "status": "Draft",
+      "invoiceNumber": "1507",
+      "date": "June 19, 2026",
+      "terms": "",
+      "client": {
+        "name": "Roy Swazey's Roofing",
+        "address": "140 Renshaw Road, Rothesay, NB E2H 1R6",
+        "jobAddress": "12 Fieldcrest",
+        "phone": "(506) 273-1609"
+      },
+      "sections": [
+        {
+          "title": "Materials & Installation",
+          "items": [
+            {
+              "description": "Metal install - 6/12 pitch",
+              "qty": 20,
+              "unit": "sq",
+              "price": 210
+            },
+            {
+              "description": "Metal install - 8/12 pitch",
+              "qty": 10,
+              "unit": "sq",
+              "price": 230
+            },
+            {
+              "description": "Valley",
+              "qty": 140,
+              "unit": "feet",
+              "price": 5
+            },
+            {
+              "description": "Synthetic underlayment",
+              "qty": 30,
+              "unit": "sq",
+              "price": 10
+            },
+            {
+              "description": "Returns",
+              "qty": 8,
+              "unit": "each",
+              "price": 75
+            }
+          ]
+        }
+      ],
+      "extras": [
+        "Cut 80' Vent Ridge",
+        "CelKirk Chimney",
+        "Install + Remove + Install 6 sq."
+      ],
+      "warranty": "10 YEAR Ltd. WARRANTY on Workmanship"
+    },
+    {
+      "id": "inv-1781987048527-1508",
+      "status": "Draft",
+      "invoiceNumber": "1508",
+      "date": "June 19, 2026",
+      "terms": "Upon Completion",
+      "client": {
+        "name": "Roy Swazey's Roofing",
+        "address": "140 Renshaw Road, Rothesay, NB E2H 1R6",
+        "jobAddress": "100 main street",
+        "phone": "(506) 273-1609"
+      },
+      "sections": [
+        {
+          "title": "Materials & Installation",
+          "items": [
+            {
+              "description": "Metal Install",
+              "qty": 1,
+              "unit": "job",
+              "price": 5000
+            }
+          ]
+        }
+      ],
+      "extras": [],
+      "warranty": "10 YEAR Ltd. WARRANTY on Workmanship"
+    },
+    {
+      "id": "inv-1781987048527-1509",
+      "status": "Draft",
+      "invoiceNumber": "1509",
+      "date": "June 19/2026",
+      "terms": "",
+      "client": {
+        "name": "Roy Swazey's Roofing",
+        "address": "140 Renshaw Road, Rothesay, NB E2H 1R6",
+        "jobAddress": "12 Fieldcrest",
+        "phone": "(506) 273-1609"
+      },
+      "sections": [
+        {
+          "title": "Materials & Installation",
+          "items": [
+            {
+              "description": "20 sq. 6/12 pitch",
+              "qty": 20,
+              "unit": "sq",
+              "price": 210
+            },
+            {
+              "description": "10 sq. 8/12 pitch",
+              "qty": 10,
+              "unit": "sq",
+              "price": 230
+            },
+            {
+              "description": "Valley",
+              "qty": 140,
+              "unit": "feet",
+              "price": 5
+            },
+            {
+              "description": "Synthetic underlayment",
+              "qty": 30,
+              "unit": "sq",
+              "price": 10
+            },
+            {
+              "description": "Returns",
+              "qty": 8,
+              "unit": "each",
+              "price": 75
+            }
+          ]
+        }
+      ],
+      "extras": [
+        "Cut 80' Vent Ridge",
+        "SelKirk Chimney",
+        "Install + Remove + Install 6 sq."
+      ],
+      "warranty": "10 YEAR Ltd. WARRANTY on Workmanship"
+    },
+    {
+      "id": "inv-1781987048527-1510",
+      "status": "Draft",
+      "invoiceNumber": "1510",
+      "date": "June 20, 2026",
+      "terms": "Upon Completion",
+      "client": {
+        "name": null,
+        "address": null,
+        "jobAddress": null
+      },
+      "sections": [],
+      "extras": [],
+      "warranty": "10 YEAR Ltd. WARRANTY on Workmanship"
+    },
+    {
+      "id": "inv-1781987048527-1511",
+      "status": "Draft",
+      "invoiceNumber": "1511",
+      "date": "June 20, 2026",
+      "terms": "Upon Completion",
+      "client": {
+        "name": null,
+        "address": null,
+        "jobAddress": null
+      },
+      "sections": [],
+      "extras": [],
+      "warranty": "10 YEAR Ltd. WARRANTY on Workmanship"
+    },
+    {
+      "id": "inv-1781987048527-1512",
+      "status": "Draft",
+      "invoiceNumber": "1512",
+      "date": "June 20, 2026",
+      "terms": "Upon Completion",
+      "client": {
+        "name": null,
+        "address": null,
+        "jobAddress": null
+      },
+      "sections": [],
+      "extras": [],
+      "warranty": "10 YEAR Ltd. WARRANTY on Workmanship"
+    },
+    {
+      "id": "inv-1781987048527-1513",
+      "status": "Draft",
+      "invoiceNumber": "1513",
+      "date": "June 20, 2026",
+      "terms": "Upon Completion",
+      "client": {
+        "name": null,
+        "address": null,
+        "jobAddress": null
+      },
+      "sections": [],
+      "extras": [],
+      "warranty": "10 YEAR Ltd. WARRANTY on Workmanship"
+    },
+    {
+      "id": "inv-1781987048527-1514",
+      "status": "Draft",
+      "invoiceNumber": "1514",
+      "date": "June 20, 2026",
+      "terms": "Upon Completion",
+      "client": {
+        "name": null,
+        "address": null,
+        "jobAddress": null
+      },
+      "sections": [],
+      "extras": [],
+      "warranty": "10 YEAR Ltd. WARRANTY on Workmanship"
+    }
+  ],
+  "checkins": [
+    {
+      "id": "chk-1",
+      "employeeName": "John Thompson",
+      "checkInTime": "2026-06-19T08:00:00.000Z",
+      "checkOutTime": "2026-06-20T19:00:18.628Z",
+      "jobAddress": "12 Fieldcrest, Quispamsis, NB",
+      "notes": "Laying synthetic underlayment & valley metal work",
+      "active": false
+    },
+    {
+      "id": "chk-2",
+      "employeeName": "Dave Miller",
+      "checkInTime": "2026-06-19T09:15:00.000Z",
+      "checkOutTime": "2026-06-20T20:00:55.247Z",
+      "jobAddress": "12 Fieldcrest, Quispamsis, NB",
+      "notes": "Screwing down 6/12 pitch steel panels on south side",
+      "active": false
+    },
+    {
+      "id": "chk-3",
+      "employeeName": "Steve Carey",
+      "checkInTime": "2026-06-18T08:00:00.000Z",
+      "checkOutTime": "2026-06-18T16:30:00.000Z",
+      "jobAddress": "100 Main Street, Quispamsis, NB",
+      "notes": "Completed ridge vent install and swept the yard for nails.",
+      "active": false
+    }
+  ],
+  "logs": [
+    {
+      "id": "log-1781987048528",
+      "timestamp": "2026-06-20T20:24:08.528Z",
+      "type": "success",
+      "message": "Gmail sync scan completed. Processed 1 new email(s)."
+    },
+    {
+      "id": "log-1781987048526aron8",
+      "timestamp": "2026-06-20T20:24:08.526Z",
+      "type": "info",
+      "message": "Updated existing invoice #1513 in invoices.json"
+    },
+    {
+      "id": "log-17819870485268sji9",
+      "timestamp": "2026-06-20T20:24:08.526Z",
+      "type": "info",
+      "message": "Assigned Invoice #1513 for None"
+    },
+    {
+      "id": "log-1781987048526vdvjr",
+      "timestamp": "2026-06-20T20:24:08.526Z",
+      "type": "info",
+      "message": "Processing email: 'Re: Re: invoice' from 'placed.sj@gmail.com'"
+    },
+    {
+      "id": "log-1781987017517",
+      "timestamp": "2026-06-20T20:23:37.517Z",
+      "type": "info",
+      "message": "Sync scanning request received. Checking Gmail and Notion for unread handwritten attachments..."
+    },
+    {
+      "id": "log-1781986389915",
+      "timestamp": "2026-06-20T20:13:09.915Z",
+      "type": "success",
+      "message": "Gmail sync scan completed. Processed 1 new email(s)."
+    },
+    {
+      "id": "log-17819863899148iykg",
+      "timestamp": "2026-06-20T20:13:09.914Z",
+      "type": "info",
+      "message": "Updated existing invoice #1511 in invoices.json"
+    },
+    {
+      "id": "log-17819863899141r5t8",
+      "timestamp": "2026-06-20T20:13:09.914Z",
+      "type": "info",
+      "message": "Assigned Invoice #1511 for None"
+    },
+    {
+      "id": "log-1781986389914vu6fx",
+      "timestamp": "2026-06-20T20:13:09.914Z",
+      "type": "info",
+      "message": "Processing email: 'Re: Re: Re: pauls invoice' from 'placed.sj@gmail.com'"
+    },
+    {
+      "id": "log-1781986381926",
+      "timestamp": "2026-06-20T20:13:01.926Z",
+      "type": "success",
+      "message": "Gmail sync scan completed. Processed 1 new email(s)."
+    },
+    {
+      "id": "log-1781986381924ebjoa",
+      "timestamp": "2026-06-20T20:13:01.924Z",
+      "type": "info",
+      "message": "Updated existing invoice #1510 in invoices.json"
+    },
+    {
+      "id": "log-178198638192455x15",
+      "timestamp": "2026-06-20T20:13:01.924Z",
+      "type": "info",
+      "message": "Assigned Invoice #1510 for None"
+    },
+    {
+      "id": "log-17819863819248dfa8",
+      "timestamp": "2026-06-20T20:13:01.924Z",
+      "type": "info",
+      "message": "Processing email: 'Re: Re: pauls invoice' from 'placed.sj@gmail.com'"
+    },
+    {
+      "id": "log-1781986347362",
+      "timestamp": "2026-06-20T20:12:27.362Z",
+      "type": "info",
+      "message": "Sync scanning request received. Checking Gmail and Notion for unread handwritten attachments..."
+    },
+    {
+      "id": "log-1781986330323",
+      "timestamp": "2026-06-20T20:12:10.323Z",
+      "type": "info",
+      "message": "Sync scanning request received. Checking Gmail and Notion for unread handwritten attachments..."
+    },
+    {
+      "id": "log-1781986003317",
+      "timestamp": "2026-06-20T20:06:43.317Z",
+      "type": "success",
+      "message": "Gmail sync scan completed. Processed 0 new email(s)."
+    },
+    {
+      "id": "log-1781986001368",
+      "timestamp": "2026-06-20T20:06:41.368Z",
+      "type": "info",
+      "message": "Sync scanning request received. Checking Gmail and Notion for unread handwritten attachments..."
+    },
+    {
+      "id": "log-1781985842774",
+      "timestamp": "2026-06-20T20:04:02.774Z",
+      "type": "success",
+      "message": "Gmail sync scan completed. Processed 0 new email(s)."
+    },
+    {
+      "id": "log-1781985840959",
+      "timestamp": "2026-06-20T20:04:00.959Z",
+      "type": "info",
+      "message": "Sync scanning request received. Checking Gmail and Notion for unread handwritten attachments..."
+    },
+    {
+      "id": "log-1781985809417",
+      "timestamp": "2026-06-20T20:03:29.417Z",
+      "type": "success",
+      "message": "Gmail sync scan completed. Processed 1 new email(s)."
+    },
+    {
+      "id": "log-1781985809415wqxnb",
+      "timestamp": "2026-06-20T20:03:29.415Z",
+      "type": "info",
+      "message": "Processing email: 'pauls invoice' from 'CRAIG S <placed.sj@gmail.com>'"
+    },
+    {
+      "id": "log-1781985794259",
+      "timestamp": "2026-06-20T20:03:14.259Z",
+      "type": "info",
+      "message": "Sync scanning request received. Checking Gmail and Notion for unread handwritten attachments..."
+    },
+    {
+      "id": "log-1781985678155",
+      "timestamp": "2026-06-20T20:01:18.155Z",
+      "type": "success",
+      "message": "Gmail sync scan completed. Processed 0 new email(s)."
+    },
+    {
+      "id": "log-1781985676014",
+      "timestamp": "2026-06-20T20:01:16.014Z",
+      "type": "info",
+      "message": "Sync scanning request received. Checking Gmail and Notion for unread handwritten attachments..."
+    },
+    {
+      "id": "log-1781985655262",
+      "timestamp": "2026-06-20T20:00:55.262Z",
+      "type": "info",
+      "message": "Dave Miller clocked-out securely."
+    },
+    {
+      "id": "log-1781983456400",
+      "timestamp": "2026-06-20T19:24:16.400Z",
+      "type": "success",
+      "message": "Gmail sync scan completed. Processed 0 new email(s)."
+    },
+    {
+      "id": "log-1781983453241",
+      "timestamp": "2026-06-20T19:24:13.241Z",
+      "type": "info",
+      "message": "Sync scanning request received. Checking Gmail and Notion for unread handwritten attachments..."
+    },
+    {
+      "id": "log-1781982070035",
+      "timestamp": "2026-06-20T19:01:10.035Z",
+      "type": "success",
+      "message": "Gmail sync scan completed. Processed 1 new email(s)."
+    },
+    {
+      "id": "log-1781982070022wsfwp",
+      "timestamp": "2026-06-20T19:01:10.022Z",
+      "type": "info",
+      "message": "Processing email: '=?UTF-8?Q?Important_=E2=80=93_AWS_Invoice_e-mail_address_changes?=' from 'Amazon Web Services <no-reply@amazonaws.com>'"
+    },
+    {
+      "id": "log-1781982064074",
+      "timestamp": "2026-06-20T19:01:04.074Z",
+      "type": "info",
+      "message": "Sync scanning request received. Checking Gmail and Notion for unread handwritten attachments..."
+    },
+    {
+      "id": "log-1781982018662",
+      "timestamp": "2026-06-20T19:00:18.662Z",
+      "type": "info",
+      "message": "John Thompson clocked-out securely."
+    },
+    {
+      "id": "log-1",
+      "timestamp": "2026-06-19T10:15:00.000Z",
+      "type": "info",
+      "message": "Invoice automation pipeline daemon initialized successfully."
+    },
+    {
+      "id": "log-2",
+      "timestamp": "2026-06-19T11:30:23Z",
+      "type": "success",
+      "message": "Gmail sync scan completed: processed 0 new handwritten attachments."
+    }
+  ],
+  "emails": [
+    {
+      "id": "em-1",
+      "sender": "paulcarey802@gmail.com",
+      "subject": "Invoice 12 Fieldcrest 2026-06-19 Handwritten Draft",
+      "date": "2026-06-19T11:45:00.000Z",
+      "attachmentName": "Paul_Invoice_12_Fieldcrest_Handwritten.jpg",
+      "ocrConfidence": 0.95,
+      "parsedInvoiceNumber": "1494",
+      "status": "parsed"
+    }
+  ]
+}

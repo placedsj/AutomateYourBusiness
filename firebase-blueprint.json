@@ -1,0 +1,90 @@
+{
+  "entities": {
+    "Config": {
+      "title": "Config",
+      "description": "System calibration settings and credentials",
+      "type": "object",
+      "properties": {
+        "gmailEmail": { "type": "string", "description": "Scanner recipient inbox address" },
+        "senderFilter": { "type": "string", "description": "Roofing estimator sender address filter" },
+        "notionToken": { "type": "string", "description": "Notion integration secret key" },
+        "notionDatabaseId": { "type": "string", "description": "Target Notion database hex ID" },
+        "lastInvoiceNumber": { "type": "number", "description": "Incremental counter for newly issued invoices" },
+        "geminiApiKey": { "type": "string", "description": "Google AI Studio API key" }
+      },
+      "required": ["gmailEmail", "senderFilter", "lastInvoiceNumber"]
+    },
+    "Invoice": {
+      "title": "Invoice",
+      "description": "Premium customer contract billing specification",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Unique identifier" },
+        "invoiceNumber": { "type": "string", "description": "Formatted sequential invoice id code" },
+        "date": { "type": "string", "description": "Date of issue" },
+        "dueDate": { "type": "string", "description": "Payment final date" },
+        "terms": { "type": "string", "description": "Billing timing conditions" },
+        "client": { "type": "object", "description": "Contract recipient name, address, job site, and contact number" },
+        "sections": { "type": "array", "description": "Sub-sections of labor/material line items list" },
+        "extras": { "type": "array", "description": "Additional handwritten notes items or extras list" },
+        "warranty": { "type": "string", "description": "Ltd workmanship warranty text" },
+        "subtotal": { "type": "number" },
+        "tax": { "type": "number" },
+        "total": { "type": "number" },
+        "balanceDue": { "type": "number" },
+        "status": { "type": "string", "enum": ["Draft", "Paid"] }
+      },
+      "required": ["id", "invoiceNumber", "total", "status"]
+    },
+    "CheckIn": {
+      "title": "CheckIn",
+      "description": "Worker job-site shift attendance and safety check-in record",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "employeeName": { "type": "string" },
+        "checkInTime": { "type": "string" },
+        "checkOutTime": { "type": "string" },
+        "jobAddress": { "type": "string" },
+        "notes": { "type": "string" },
+        "active": { "type": "boolean" }
+      },
+      "required": ["id", "employeeName", "checkInTime", "active"]
+    },
+    "Log": {
+      "title": "Log",
+      "description": "Background worker and server transaction daemon log entry",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "timestamp": { "type": "string" },
+        "type": { "type": "string", "enum": ["info", "success", "error"] },
+        "message": { "type": "string" }
+      },
+      "required": ["id", "timestamp", "type", "message"]
+    },
+    "Email": {
+      "title": "Email",
+      "description": "Scanned email logs containing raw image/text attachments",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "sender": { "type": "string" },
+        "subject": { "type": "string" },
+        "date": { "type": "string" },
+        "attachmentName": { "type": "string" },
+        "ocrConfidence": { "type": "number" },
+        "parsedInvoiceNumber": { "type": "string" },
+        "status": { "type": "string" }
+      },
+      "required": ["id", "sender", "subject", "status"]
+    }
+  },
+  "firestore": {
+    "/system/config": { "schema": "Config", "description": "Single system configuration document" },
+    "/invoices/{invoiceId}": { "schema": "Invoice", "description": "Roofing bills and estimate invoices" },
+    "/checkins/{checkInId}": { "schema": "CheckIn", "description": "Employee time sheet entries" },
+    "/logs/{logId}": { "schema": "Log", "description": "Background transactional logs" },
+    "/emails/{emailId}": { "schema": "Email", "description": "Parsed inbound system correspondence emails" }
+  }
+}

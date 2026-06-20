@@ -1,0 +1,6 @@
+{
+  "name": "Paul's Roofing Invoice Generator",
+  "description": "An interactive digital invoice editor, print preview, time-clock, and OCR pipeline analyzer.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

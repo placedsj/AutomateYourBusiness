@@ -14,6 +14,15 @@ interface PipelineConsoleProps {
   onTriggerSync: () => void;
   onUploadImage: (base64: string, name: string) => Promise<Invoice>;
   isSyncing: boolean;
+  
+  // Gmail Live properties
+  user: any;
+  isLoggingIn: boolean;
+  onLogin: () => void;
+  onLogout: () => void;
+  onTriggerLiveSync: () => void;
+  isLiveAutoActive: boolean;
+  onToggleLiveAuto: () => void;
 }
 
 export const PipelineConsole: React.FC<PipelineConsoleProps> = ({
@@ -24,7 +33,16 @@ export const PipelineConsole: React.FC<PipelineConsoleProps> = ({
   onRefreshConfig,
   onTriggerSync,
   onUploadImage,
-  isSyncing
+  isSyncing,
+  
+  // Gmail Live destructuring
+  user,
+  isLoggingIn,
+  onLogin,
+  onLogout,
+  onTriggerLiveSync,
+  isLiveAutoActive,
+  onToggleLiveAuto
 }) => {
   const [activeTab, setActiveTab] = useState<"logs" | "settings" | "feed">("logs");
   const [isUploading, setIsSubmittingImage] = useState(false);
@@ -132,12 +150,16 @@ export const PipelineConsole: React.FC<PipelineConsoleProps> = ({
           </div>
 
           <button
-            onClick={onTriggerSync}
+            onClick={user ? onTriggerLiveSync : onTriggerSync}
             disabled={isSyncing}
-            className="flex items-center justify-center gap-2 bg-[#00a0df] hover:opacity-90 disabled:opacity-50 text-white font-bold text-xs px-4 py-2 rounded-lg transition-all shadow-xs cursor-pointer"
+            className={`flex items-center justify-center gap-2 font-bold text-xs px-4 py-2 rounded-lg transition-all shadow-xs cursor-pointer text-white ${
+              user 
+                ? "bg-emerald-600 hover:bg-emerald-500 disabled:opacity-50" 
+                : "bg-[#00a0df] hover:opacity-90 disabled:opacity-50"
+            }`}
           >
             {isSyncing ? <RefreshCw className="w-3.5 h-3.5 animate-spin" /> : <Play className="w-3.5 h-3.5 fill-white" />}
-            Sync Workspace
+            {user ? "Scan Live Gmail Inbox" : "Sync simulated Workspace"}
           </button>
         </div>
 
@@ -145,9 +167,56 @@ export const PipelineConsole: React.FC<PipelineConsoleProps> = ({
         <div className="flex-1 p-6 overflow-y-auto">
           {activeTab === "logs" && (
             <div className="space-y-4">
-              <div className="bg-slate-50 border border-slate-200 p-4 rounded-xl flex items-center justify-between text-slate-600">
-                <span className="text-xs">Review real-time background transactions and pipeline telemetry.</span>
-                <span className="text-[10px] text-slate-500 font-mono font-bold">DAEMON: LIVE</span>
+              <div className="bg-slate-50 border border-slate-200 p-4 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-slate-600">
+                <div>
+                  <p className="text-xs font-semibold text-slate-800">Automated Secretary Pipeline status</p>
+                  <p className="text-[11px] text-slate-500 mt-0.5">Review real-time background transactions and active pipeline telemetry.</p>
+                </div>
+                
+                <div className="flex flex-wrap items-center gap-3">
+                  {/* Google Connection Button */}
+                  {!user ? (
+                    <button
+                      type="button"
+                      onClick={onLogin}
+                      disabled={isLoggingIn}
+                      className="flex items-center gap-2 bg-white hover:bg-slate-50 border border-slate-200 rounded-lg px-3 py-1.5 text-xs text-slate-650 font-bold transition-all shadow-2xs cursor-pointer active:scale-98"
+                    >
+                      <svg className="w-4 h-4" viewBox="0 0 24 24">
+                        <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
+                        <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
+                        <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" />
+                        <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" />
+                      </svg>
+                      {isLoggingIn ? "Signing in..." : "Link Gmail Account"}
+                    </button>
+                  ) : (
+                    <div className="flex items-center gap-3 bg-white border border-slate-200 px-3 py-1.5 rounded-lg text-xs leading-none shadow-2xs font-semibold">
+                      <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                      <span className="text-slate-700 font-bold">Gmail Active: <span className="text-emerald-700">{user.email}</span></span>
+                      <button
+                        type="button"
+                        onClick={onLogout}
+                        className="text-red-500 hover:underline hover:text-red-700 font-bold cursor-pointer"
+                      >
+                        Disconnect
+                      </button>
+                    </div>
+                  )}
+
+                  {/* 24h Auto Mode Switch */}
+                  {user && (
+                    <label className="flex items-center gap-2 bg-white border border-slate-200 px-3 py-1.5 rounded-lg text-xs font-bold text-slate-700 cursor-pointer shadow-2xs select-none">
+                      <input
+                        type="checkbox"
+                        checked={isLiveAutoActive}
+                        onChange={onToggleLiveAuto}
+                        className="rounded border-slate-300 text-emerald-600 focus:ring-emerald-500 w-3.5 h-3.5 cursor-pointer accent-emerald-600"
+                      />
+                      24h Active Automator
+                    </label>
+                  )}
+                </div>
               </div>
               
               <div className="bg-slate-950 font-mono text-[11px] p-4 rounded-xl border border-slate-850 h-[320px] overflow-y-auto space-y-2.5 leading-relaxed selection:bg-cyan-500/20 text-white">
@@ -169,11 +238,13 @@ export const PipelineConsole: React.FC<PipelineConsoleProps> = ({
           )}
 
           {activeTab === "feed" && (
-            <div className="space-y-4">
-              <div className="bg-[#e8f6fd] border border-[#cae8f8] p-4 rounded-xl">
-                <p className="text-xs text-[#006eaa] font-medium">
-                  Scans listed attachments for Paul's invoice drafts coming from <strong className="font-bold">{config.senderFilter}</strong>.
-                </p>
+            <div className="space-y-4 font-sans text-slate-800">
+              <div className="bg-[#e8f6fd] border border-[#cae8f8] p-4 rounded-xl space-y-2">
+                <div className="text-xs font-extrabold text-[#006eaa] uppercase tracking-wider">Multi-Channel Automator Secretary</div>
+                <div className="text-xs text-[#1a5b82] leading-relaxed space-y-1">
+                  <p>• <strong>Paul's Direct Inbox Pipeline</strong>: Scans for estimates and handwritten images sent by <strong className="font-bold">{config.senderFilter}</strong>.</p>
+                  <p>• <strong>Self-Emailed Dictations Pipeline</strong>: Send an email to yourself with the subject <strong className="font-bold">"invoice for paul"</strong> and we will automatically parse either the <em>handwritten image attachment</em> or the <em>text instructions in the email body</em> to draft the brand-perfect invoice sheet!</p>
+                </div>
               </div>
 
               <div className="space-y-3 max-h-[350px] overflow-y-auto pr-1">

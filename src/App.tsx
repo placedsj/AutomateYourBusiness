@@ -9,6 +9,8 @@ import {
   Files, Clock, Settings, FileText, Landmark, UserCheck, 
   RefreshCw, CheckCircle, HelpCircle, HardHat, TrendingUp, Trash2 
 } from "lucide-react";
+import { initAuth, googleSignIn, logout, scanGmailInbox } from "./gmailSync";
+import { User } from "firebase/auth";
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<"builder" | "clock" | "pipeline">("builder");
@@ -51,6 +53,12 @@ export default function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [isSavingInvoice, setIsSavingInvoice] = useState(false);
   const [isSyncing, setIsSyncing] = useState(false);
+
+  // Google OAuth states
+  const [user, setUser] = useState<User | null>(null);
+  const [accessToken, setAccessToken] = useState<string | null>(null);
+  const [isLoggingIn, setIsLoggingIn] = useState(false);
+  const [isLiveAutoActive, setIsLiveAutoActive] = useState(false);
 
   // Initial Load from APIs
   const loadInitialData = async () => {
@@ -217,6 +225,113 @@ export default function App() {
       alert("Clock out failed: " + err.message);
     }
   };
+
+  const handleLogin = async () => {
+    setIsLoggingIn(true);
+    try {
+      const authResult = await googleSignIn();
+      if (authResult) {
+        setUser(authResult.user);
+        setAccessToken(authResult.accessToken);
+        
+        await fetch("/api/logs", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            timestamp: new Date().toISOString(),
+            type: "success",
+            message: `Google Workspace identity linked successfully: ${authResult.user.email}. Live inbox scanner enabled.`
+          })
+        });
+        await loadInitialData();
+      }
+    } catch (err: any) {
+      alert("Authentication failed: " + err.message);
+    } finally {
+      setIsLoggingIn(false);
+    }
+  };
+
+  const handleLogout = async () => {
+    try {
+      await logout();
+      setUser(null);
+      setAccessToken(null);
+      setIsLiveAutoActive(false);
+      
+      await fetch("/api/logs", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          timestamp: new Date().toISOString(),
+          type: "info",
+          message: "Linked Google account disconnected. Reverting workspace back to simulated offline sandbox mode."
+        })
+      });
+      await loadInitialData();
+    } catch (err: any) {
+      alert("Disconnect failed: " + err.message);
+    }
+  };
+
+  const handleTriggerLiveSync = async () => {
+    if (!accessToken) return;
+    setIsSyncing(true);
+    try {
+      await scanGmailInbox(
+        accessToken,
+        { senderFilter: config.senderFilter },
+        async (type, msg) => {
+          await fetch("/api/logs", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              timestamp: new Date().toISOString(),
+              type,
+              message: msg
+            })
+          });
+        },
+        async (newInv) => {
+          setActiveInvoice(newInv);
+        }
+      );
+      await loadInitialData();
+    } catch (err: any) {
+      console.error(err);
+    } finally {
+      setIsSyncing(false);
+    }
+  };
+
+  // Auth initializer hook
+  useEffect(() => {
+    initAuth(
+      (currentUser, token) => {
+        setUser(currentUser);
+        setAccessToken(token);
+      },
+      () => {
+        setUser(null);
+        setAccessToken(null);
+        setIsLiveAutoActive(false);
+      }
+    );
+  }, []);
+
+  // 1-minute background polling for active daily automated pipeline
+  useEffect(() => {
+    if (!isLiveAutoActive || !accessToken) return;
+
+    // Tick instantly first, then schedule
+    handleTriggerLiveSync();
+
+    const interval = setInterval(() => {
+      handleTriggerLiveSync();
+    }, 60000);
+
+    return () => clearInterval(interval);
+  }, [isLiveAutoActive, accessToken, config.senderFilter]);
 
   const handleTriggerSync = async () => {
     setIsSyncing(true);
@@ -391,7 +506,6 @@ export default function App() {
                 onDelete={handleDeleteInvoice}
                 onSelectInvoice={handleSelectInvoice}
                 isSaving={isSavingInvoice}
-                clientProfiles={config.clientProfiles}
               />
             </div>
 
@@ -465,6 +579,15 @@ export default function App() {
             onTriggerSync={handleTriggerSync}
             onUploadImage={handleUploadImageOCR}
             isSyncing={isSyncing}
+            
+            // Gmail Live prop passing
+            user={user}
+            isLoggingIn={isLoggingIn}
+            onLogin={handleLogin}
+            onLogout={handleLogout}
+            onTriggerLiveSync={handleTriggerLiveSync}
+            isLiveAutoActive={isLiveAutoActive}
+            onToggleLiveAuto={() => setIsLiveAutoActive(!isLiveAutoActive)}
           />
         )}
       </main>

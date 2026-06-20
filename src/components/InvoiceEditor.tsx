@@ -10,7 +10,6 @@ interface InvoiceEditorProps {
   onDelete: (id: string) => void;
   onSelectInvoice: (id: string) => void;
   isSaving: boolean;
-  clientProfiles?: { [key: string]: ClientProfile };
 }
 
 export const InvoiceEditor: React.FC<InvoiceEditorProps> = ({
@@ -20,8 +19,7 @@ export const InvoiceEditor: React.FC<InvoiceEditorProps> = ({
   onSave,
   onDelete,
   onSelectInvoice,
-  isSaving,
-  clientProfiles
+  isSaving
 }) => {
   const handleClientChange = (field: keyof ClientProfile, value: string) => {
     onChange({
@@ -41,7 +39,7 @@ export const InvoiceEditor: React.FC<InvoiceEditorProps> = ({
   };
 
   // Preset client mapping to easily pre-fill values
-  const CLIENT_PRESETS: { [key: string]: ClientProfile } = (clientProfiles && Object.keys(clientProfiles).length > 0) ? clientProfiles : {
+  const CLIENT_PRESETS: { [key: string]: ClientProfile } = {
     roy: {
       name: "Roy Swazey's Roofing",
       address: "140 Renshaw Road, Rothesay, NB E2H 1R6",
@@ -62,13 +60,7 @@ export const InvoiceEditor: React.FC<InvoiceEditorProps> = ({
     if (key && CLIENT_PRESETS[key]) {
       onChange({
         ...invoice,
-        client: {
-          name: CLIENT_PRESETS[key].name || "",
-          address: CLIENT_PRESETS[key].address || "",
-          jobAddress: CLIENT_PRESETS[key].jobAddress || CLIENT_PRESETS[key].address || "",
-          phone: CLIENT_PRESETS[key].phone || "",
-          email: CLIENT_PRESETS[key].email || ""
-        }
+        client: { ...CLIENT_PRESETS[key] }
       });
     }
   };
@@ -188,18 +180,19 @@ export const InvoiceEditor: React.FC<InvoiceEditorProps> = ({
         <label className="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2 font-display">
           Quick-Fill Client Profile
         </label>
-        <div className="flex flex-wrap gap-2">
-          {Object.keys(CLIENT_PRESETS).map((key) => (
-            <button
-              key={key}
-              type="button"
-              onClick={() => handleApplyPreset(key)}
-              className="flex-1 min-w-[120px] bg-[#e8f6fd] hover:bg-[#cae8f8]/55 text-xs font-bold text-[#006eaa] py-2.5 px-3 rounded-lg border border-[#cae8f8]/70 transition-colors cursor-pointer text-center truncate"
-              title={CLIENT_PRESETS[key].name}
-            >
-              {CLIENT_PRESETS[key].name}
-            </button>
-          ))}
+        <div className="flex gap-2">
+          <button
+            onClick={() => handleApplyPreset("roy")}
+            className="flex-1 bg-[#e8f6fd] hover:bg-[#cae8f8]/55 text-xs font-bold text-[#006eaa] py-2.5 rounded-lg border border-[#cae8f8]/70 transition-colors cursor-pointer"
+          >
+            Roy Swazey's Roofing
+          </button>
+          <button
+            onClick={() => handleApplyPreset("josh")}
+            className="flex-1 bg-[#e8f6fd] hover:bg-[#cae8f8]/55 text-xs font-bold text-[#006eaa] py-2.5 rounded-lg border border-[#cae8f8]/70 transition-colors cursor-pointer"
+          >
+            Joshua Sterling
+          </button>
         </div>
       </div>
 

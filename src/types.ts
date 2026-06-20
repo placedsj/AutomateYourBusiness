@@ -54,7 +54,6 @@ export interface AppConfig {
   notionDatabaseId: string;
   lastInvoiceNumber: number;
   geminiApiKey: string;
-  clientProfiles?: { [key: string]: ClientProfile };
 }
 
 export interface PipelineLog {
